@@ -30,5 +30,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "Eye-Popping Urban Website Design"]
+  "exclude": ["node_modules", "Eye-Popping Urban Website Design", "src/main.tsx", "vite.config.ts"]
 }
