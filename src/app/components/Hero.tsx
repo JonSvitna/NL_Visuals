@@ -14,7 +14,7 @@ export function Hero() {
           className="h-full w-full object-cover opacity-40"
         >
           <source
-            src="https://videos.pexels.com/video-files/3191142/3191142-uhd_2560_1440_25fps.mp4"
+            src="https://videos.pexels.com/video-files/34038015/34038015-hd_1920_1080_25fps.mp4"
             type="video/mp4"
           />
         </video>
