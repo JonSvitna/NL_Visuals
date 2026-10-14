@@ -3,36 +3,12 @@ import { useInView } from "motion/react";
 import { useRef } from "react";
 
 const images = [
-  {
-    url: "https://images.unsplash.com/photo-1672059928294-210dc79e7ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHx1cmJhbiUyMEJhbHRpbW9yZSUyMHN0cmVldCUyMHBob3RvZ3JhcGh5JTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc3NzM5MDAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Urban Stories",
-    category: "Street"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1550697278-2b4ffe4b910f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHx1cmJhbiUyMEJhbHRpbW9yZSUyMHN0cmVldCUyMHBob3RvZ3JhcGh5JTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc3NzM5MDAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "City Lines",
-    category: "Architecture"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1596992211168-76ef9679047e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHx1cmJhbiUyMEJhbHRpbW9yZSUyMHN0cmVldCUyMHBob3RvZ3JhcGh5JTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc3NzM5MDAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Heritage",
-    category: "Architecture"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1748914033839-25e049eb6097?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw2fHx1cmJhbiUyMEJhbHRpbW9yZSUyMHN0cmVldCUyMHBob3RvZ3JhcGh5JTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc3NzM5MDAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Reflections",
-    category: "Urban"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1617603000700-06bd452f3a88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHx1cmJhbiUyMEJhbHRpbW9yZSUyMHN0cmVldCUyMHBob3RvZ3JhcGh5JTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc3NzM5MDAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Rooftop View",
-    category: "Lifestyle"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1768579026181-9bdb68ac6f1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw4fHx1cmJhbiUyMEJhbHRpbW9yZSUyMHN0cmVldCUyMHBob3RvZ3JhcGh5JTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc3NzM5MDAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Skyline",
-    category: "Architecture"
-  }
+  { url: "/portfolio/portfolio-1.jpg", title: "Golden Hour Toast", category: "Lifestyle" },
+  { url: "/portfolio/portfolio-2.jpg", title: "Through the Gate", category: "Travel" },
+  { url: "/portfolio/portfolio-3.jpg", title: "The First Kiss", category: "Wedding" },
+  { url: "/portfolio/portfolio-4.jpg", title: "Dapper Joy", category: "Portrait" },
+  { url: "/portfolio/portfolio-5.jpg", title: "Pure Laughter", category: "Events" },
+  { url: "/portfolio/portfolio-6.jpg", title: "Quiet Moment", category: "Family" }
 ];
 
 export function Portfolio() {
@@ -52,14 +28,14 @@ export function Portfolio() {
           <p className="text-xl text-gray-400">A glimpse into Baltimore's soul</p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 lg:overflow-visible">
           {images.map((image, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-lg aspect-[4/5] cursor-pointer"
+              className="group relative h-[420px] min-w-[240px] flex-1 snap-center overflow-hidden rounded-lg cursor-pointer"
             >
               <img
                 src={image.url}
